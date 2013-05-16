@@ -43,14 +43,14 @@ public class ProductServiceImpl implements ProductService {
 	@Log
 	@AuditTrail
 	public String create(Product product) {
-		Collection<Product> products = productRepository.loadByName(product.getName());
+		Collection<Product> products = productRepository.findByName(product.getName());
 		if (productSpecification.isNotEligibleForCreation(product, products)) {
 			ExceptionUtil.throwBusinessViolationException(
 				"Product already exists: " + product.getName(), 
 				ExceptionLevel.INFORMATIVE, 
 				ProductService.UNIQUE_EXCEPTION_PRODUCT_ALREADY_EXISTS);
 		}
-		productRepository.create(product);
+		productRepository.save(product);
 		return product.getId();
 	}
 	
@@ -65,7 +65,7 @@ public class ProductServiceImpl implements ProductService {
 	@Log
 	@AuditTrail
 	public Product loadById(String id) {
-		return productRepository.loadById(id);
+		return productRepository.findOne(id);
 	}
 	
 	public void delete (Product product) {

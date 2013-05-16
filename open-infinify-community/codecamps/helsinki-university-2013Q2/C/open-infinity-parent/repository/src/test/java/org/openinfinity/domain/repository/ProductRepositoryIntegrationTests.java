@@ -56,8 +56,8 @@ public class ProductRepositoryIntegrationTests {
 	@Test @Ignore
 	public void givenKnownProductWhenStoringToBackendRepositoryThenProductMustBeFound() {
 		Product expected = createProduct();
-		String id = helloRepository.create(expected);
-		Product actual = helloRepository.loadById(id);
+		String id = helloRepository.save(expected).getId();
+		Product actual = helloRepository.findOne(id);
 		assertEquals(expected.getName(), actual.getName());
 		assertEquals(expected.getCompany(), actual.getCompany());
 		assertEquals(expected.getDescription(), actual.getDescription());

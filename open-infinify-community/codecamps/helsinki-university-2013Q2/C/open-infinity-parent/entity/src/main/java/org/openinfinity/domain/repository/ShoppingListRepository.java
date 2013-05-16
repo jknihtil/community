@@ -15,25 +15,24 @@
  */
 package org.openinfinity.domain.repository;
 
-import java.util.Collection;
-
-import org.openinfinity.domain.entity.Product;
+import org.openinfinity.domain.entity.ShoppingList;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  * Shoppinglist repository interface.
  * 
  * @author Ilkka Leinonen
  */
-public interface ShoppingListRepository {
+public interface ShoppingListRepository extends MongoRepository<ShoppingList, String>{
 	
-	Collection<Product> queryByName(String name);
-	
-	Product queryById(String id);
-	
-	Product addProductToShoppingList(Product product);
-	
-	Product updateProductToShoppingList(Product product);
-	
-	void deleteProductFromShoppingList(Product product);
+//	Collection<Product> queryByName(String name);
+//	
+//	Product queryById(String id);
+//	
+//	Product addProductToShoppingList(Product product);
+//	
+//	Product updateProductToShoppingList(Product product);
+//	
+//	void deleteProductFromShoppingList(Product product);
 
 }
