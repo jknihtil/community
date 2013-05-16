@@ -42,7 +42,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class ProductRepositoryIntegrationTests {
 
 	@Autowired
-	ProductRepository helloRepository;
+	ProductRepository productRepository;
 	
 	@Autowired
 	ProductSpecification productionSpecification;
@@ -56,8 +56,8 @@ public class ProductRepositoryIntegrationTests {
 	@Test @Ignore
 	public void givenKnownProductWhenStoringToBackendRepositoryThenProductMustBeFound() {
 		Product expected = createProduct();
-		String id = helloRepository.save(expected).getId();
-		Product actual = helloRepository.findOne(id);
+		String id = productRepository.save(expected).getId();
+		Product actual = productRepository.findOne(id);
 		assertEquals(expected.getName(), actual.getName());
 		assertEquals(expected.getCompany(), actual.getCompany());
 		assertEquals(expected.getDescription(), actual.getDescription());

@@ -27,15 +27,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface ProductRepository extends MongoRepository<Product, String> {
 
     List<Product> findByName(String name);
-//	public String create(Product product);
-//	
-//	public void update(Product product);
-//	
-//	public Collection<Product> loadAll();
-//	
-//	public Product loadById(String id);
-//	
-//	public Collection<Product> loadByName(String name);
-//	
-//	public void delete (Product product);
+
 }

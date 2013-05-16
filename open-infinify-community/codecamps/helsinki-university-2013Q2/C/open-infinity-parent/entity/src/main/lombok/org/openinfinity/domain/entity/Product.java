@@ -24,6 +24,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.bson.types.ObjectId;
 
 import org.openinfinity.core.annotation.NotScript;
 import org.springframework.data.annotation.Id;
