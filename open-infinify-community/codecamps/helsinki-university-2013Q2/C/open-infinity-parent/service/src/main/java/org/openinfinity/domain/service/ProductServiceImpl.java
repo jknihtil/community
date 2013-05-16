@@ -16,6 +16,7 @@
 package org.openinfinity.domain.service;
 
 import java.util.Collection;
+import org.bson.types.ObjectId;
 
 import org.openinfinity.core.annotation.AuditTrail;
 import org.openinfinity.core.annotation.Log;

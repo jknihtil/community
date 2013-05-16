@@ -116,7 +116,7 @@ public class ProductController {
     Map<String, ? extends Object> create(@Valid @RequestBody ProductModel productModel, HttpServletResponse response) {
         Set<ConstraintViolation<Product>> failures = validator.validate(productModel.getProduct());
         if (failures.isEmpty()) {
-            String id = productService.create(productModel.getProduct()).getId();
+            String id = productService.create(productModel.getProduct()).getId().toString();
             return new ModelMap("id", id);
         } else {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
